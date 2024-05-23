@@ -1,5 +1,5 @@
 {
-    "name": "zan-checker-spain-document",
+    "name": "zan-checker-document",
     "version": "1.0.0",
     "description": "Lambda function to notify when the list of received documents is updated",
     "main": "index.ts",
