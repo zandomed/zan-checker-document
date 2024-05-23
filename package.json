@@ -1,0 +1,22 @@
+{
+    "name": "zan-checker-spain-document",
+    "version": "1.0.0",
+    "description": "Lambda function to notify when the list of received documents is updated",
+    "main": "index.ts",
+    "scripts": {
+        "dev": "docker-compose up",
+        "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+        "format": "prettier --check .",
+        "format:fix": "prettier --write .",
+        "lint": "oxlint",
+        "lint:fix": "oxlint --fix"
+    },
+    "author": "Miguel Mendoza <miguel@zandome.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.138",
+        "esbuild": "^0.21.3",
+        "oxlint": "^0.3.5",
+        "prettier": "^3.2.5"
+    }
+}
