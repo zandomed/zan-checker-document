@@ -1,9 +1,9 @@
 services:
-    function:
-        image: zan-checker-local:latest
-        build:
-            context: .
-            dockerfile: Dockerfile
-        ports:
-            - '9000:8080'
-        platform: linux/arm64
+  function:
+    image: zan-checker-local:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '9000:8080'
+    platform: linux/arm64

@@ -1,8 +1,8 @@
 {
-    "recommendations": [
-        "dbaeumer.vscode-eslint",
-        "amazonwebservices.aws-toolkit-vscode",
-        "oxc.oxc-vscode",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "amazonwebservices.aws-toolkit-vscode",
+    "oxc.oxc-vscode",
+    "esbenp.prettier-vscode"
+  ]
 }
