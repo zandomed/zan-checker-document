@@ -2,10 +2,10 @@
   "name": "zan-checker-document",
   "version": "1.0.0",
   "description": "Lambda function to notify when the list of received documents is updated",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "dev": "docker-compose up",
-    "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "dev": "docker-compose build && docker-compose up",
+    "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "oxlint",
