@@ -1,1 +1,14 @@
 node_module
+.github
+.husky
+.vscode
+dist
+.gitignore
+.prettierrc
+.prettierignore
+.commitlintrc.config.js
+LICENSE
+README.md
+oxlintrc.json
+docker-compose.yml
+package-lock.json

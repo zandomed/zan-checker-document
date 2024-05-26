@@ -4,7 +4,7 @@
   "description": "Lambda function to notify when the list of received documents is updated",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "docker-compose build && docker-compose up",
+    "start": "docker-compose up --build ",
     "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
