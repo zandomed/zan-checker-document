@@ -1,9 +1,0 @@
-services:
-  lambda:
-    image: zan-checker-local:dev
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '9000:8080'
-    platform: linux/arm64

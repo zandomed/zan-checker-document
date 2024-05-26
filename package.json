@@ -5,20 +5,21 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "docker-compose up --build ",
-    "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "prepare": "husky"
   },
-  "author": "Miguel Mendoza <miguel@zandome.com>",
+  "author": {
+    "name": "Miguel Mendoza",
+    "email": "miguel@zandome.com",
+    "url": "https://github.com/zandomed"
+  },
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@types/aws-lambda": "^8.10.138",
-    "esbuild": "^0.21.3",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.4",
     "oxlint": "^0.3.5",
@@ -26,10 +27,13 @@
   },
   "lint-staged": {
     "**/*.{ts,js}": [
-      "npm run lint"
+      "bun run lint"
     ],
     "**/*": [
-      "npm run format"
+      "bun run format"
     ]
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
   }
 }
