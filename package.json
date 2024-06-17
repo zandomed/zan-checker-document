@@ -2,9 +2,12 @@
   "name": "zan-checker-document",
   "version": "1.0.0",
   "description": "Lambda function to notify when the list of received documents is updated",
-  "main": "src/index.ts",
   "scripts": {
-    "start": "bun src/index.ts",
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "bun dist/main",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "oxlint",
@@ -17,18 +20,27 @@
     "url": "https://github.com/zandomed"
   },
   "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^10.3.9",
+    "@nestjs/core": "^10.3.9",
+    "@nestjs/platform-fastify": "^10.3.9",
+    "cheerio": "^1.0.0-rc.12",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "twilio": "^5.1.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@nestjs/cli": "^10.3.2",
+    "@nestjs/schematics": "^10.1.1",
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.6.1",
     "@types/bun": "^1.1.4",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "oxlint": "^0.4.4",
     "prettier": "^3.3.2"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "twilio": "^5.1.1",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   }
 }
