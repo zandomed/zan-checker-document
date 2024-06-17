@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v1.2.2
@@ -34,7 +34,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - name: Checkout repository
-  #       uses: actions/checkout@v4.1.6
+  #       uses: actions/checkout@v4.1.7
 
   #     - name: Set up NodeJS
   #       uses: oven-sh/setup-bun@v1.2.2
