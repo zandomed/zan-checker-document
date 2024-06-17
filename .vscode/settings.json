@@ -3,6 +3,7 @@
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
-    "source.fixAll.format": "always"
+    "source.fixAll.format": "always",
+    "source.organizeImports": "always"
   }
 }
