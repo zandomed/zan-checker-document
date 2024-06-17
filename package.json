@@ -20,10 +20,14 @@
     "url": "https://github.com/zandomed"
   },
   "license": "MIT",
+  "engines": {
+    "bun": "^1.1.13"
+  },
   "dependencies": {
     "@nestjs/common": "^10.3.9",
     "@nestjs/core": "^10.3.9",
     "@nestjs/platform-fastify": "^10.3.9",
+    "@prisma/client": "5.15.0",
     "cheerio": "^1.0.0-rc.12",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
@@ -41,6 +45,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "oxlint": "^0.4.4",
-    "prettier": "^3.3.2"
+    "prettier": "^3.3.2",
+    "prisma": "^5.15.0"
   }
 }
