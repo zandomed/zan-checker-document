@@ -1,6 +1,7 @@
-import * as cheerio from 'cheerio'
+import type { Cheerio, Element } from 'cheerio'
+import { load as cLoad } from 'cheerio'
 import twilio from 'twilio'
-import * as xlsx from 'xlsx'
+import { read as xRead, utils as xUtils } from 'xlsx'
 
 const client = twilio(Bun.env.TWILIO_ACCOUNT_SID, Bun.env.TWILIO_AUTH_TOKEN)
 
@@ -8,11 +9,9 @@ const bootstrap = async () => {
   try {
     const res = await fetch(Bun.env.PAGE_SCRAPING_URL)
     const data = await res.text()
-    const $ = cheerio.load(data)
+    const $ = cLoad(data)
 
-    const elements = $(
-      Bun.env.CHEERIO_HTML_SELECTOR
-    ) as cheerio.Cheerio<cheerio.Element>
+    const elements = $(Bun.env.CHEERIO_HTML_SELECTOR) as Cheerio<Element>
 
     if (elements.length === 0) {
       throw new Error('No elements found')
@@ -28,11 +27,11 @@ const bootstrap = async () => {
 
     const fileRes = await fetch(fileURI).then((res) => res.arrayBuffer())
 
-    const workbook = xlsx.read(new Uint8Array(fileRes), {
+    const workbook = xRead(new Uint8Array(fileRes), {
       type: 'array',
     })
     const sheet_name_list = workbook.SheetNames
-    const xlData = xlsx.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])
+    const xlData = xUtils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])
 
     const values = xlData
       .map((row: any) => {
