@@ -1,4 +1,5 @@
 interface LocalEnvs {
+  PORT: number
   PAGE_SCRAPING_URL: string
   // CHEERIO
   CHEERIO_HTML_SELECTOR: string
