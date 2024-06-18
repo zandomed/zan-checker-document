@@ -1,20 +1,19 @@
-interface LocalEnvs {
+export interface EnvironmentVariables {
   PORT: number
-  PAGE_SCRAPING_URL: string
-  // CHEERIO
-  CHEERIO_HTML_SELECTOR: string
-  // TWILIO
-  TWILIO_ACCOUNT_SID: string
-  TWILIO_AUTH_TOKEN: string
-  TWILIO_PHONE_NUMBER: string
+  DATABASE_PORT: number
+  DATABASE_HOST: string
+  DATABASE_USER: string
+  DATABASE_PASSWORD: string
+  DATABASE_NAME: string
+  DATABASE_URL: string
 }
 
 declare global {
   namespace NodeJS {
-    interface ProcessEnv extends LocalEnvs {}
+    interface ProcessEnv extends EnvironmentVariables {}
   }
 }
 
 declare module 'bun' {
-  interface Env extends LocalEnvs {}
+  interface Env extends EnvironmentVariables {}
 }
